@@ -1,0 +1,19 @@
+$border-primary: grey;
+$bg-primary: white;
+
+html {
+    box-sizing: border-box;
+    font-size: 24px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit
+}
+
+%card {
+    border: 1px solid $border-primary;
+    background: $bg-primary;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}

@@ -1,0 +1,21 @@
+@import '../../app.component'
+
+.movies-list
+    width: 100%;
+    margin: auto;
+
+.movies-container
+    display: flex
+    flex-flow: column wrap;
+    max-height: 1200px;
+      
+    
+.movie
+    @extend %card;
+    flex: 1 0  auto;
+
+@for $i from 1 through 12
+    .movie:nth-child(#{$i}) 
+        $h: (random(400) + 100) / 16 + rem;
+        height: $h;
+        line-height: $h;
