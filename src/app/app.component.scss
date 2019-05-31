@@ -1,5 +1,4 @@
-$border-primary: grey;
-$bg-primary: white;
+@import '_variables';
 
 html {
     box-sizing: border-box;
@@ -8,12 +7,4 @@ html {
 
 *, *:before, *:after {
     box-sizing: inherit
-}
-
-%card {
-    border: 1px solid $border-primary;
-    background: $bg-primary;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    margin: 1rem;
 }

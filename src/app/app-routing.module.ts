@@ -1,16 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule, Routes } from "@angular/router";
 
 const appRoutes: Routes = [
-  { path: '',   redirectTo: '/movies', pathMatch: 'full' },
+  { path: "", redirectTo: "/characters", pathMatch: "full" }
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  exports: [
-    RouterModule
-  ],
+  exports: [RouterModule],
   declarations: [],
   imports: [
     RouterModule.forRoot(
@@ -20,4 +18,4 @@ const appRoutes: Routes = [
     CommonModule
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
