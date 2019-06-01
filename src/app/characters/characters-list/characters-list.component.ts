@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { CharactersApiService } from "../characters-api.service";
 
 @Component({
   selector: "cp-characters-list",
@@ -7,12 +8,12 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./characters-list.component.sass"]
 })
 export class CharactersListComponent implements OnInit {
-  http;
+  api: CharactersApiService;
   characters;
   loading;
 
-  constructor(http: HttpClient) {
-    this.http = http;
+  constructor(api: CharactersApiService) {
+    this.api = api;
   }
 
   ngOnInit() {
@@ -22,7 +23,7 @@ export class CharactersListComponent implements OnInit {
   getCharacters() {
     this.loading = true;
 
-    this.http.get("https://api.got.show/api/general/characters").subscribe(
+    this.api.getAll().subscribe(
       response => {
         this.characters = response.show;
       },

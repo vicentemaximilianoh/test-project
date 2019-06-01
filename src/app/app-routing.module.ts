@@ -3,7 +3,8 @@ import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 
 const appRoutes: Routes = [
-  { path: "", redirectTo: "/characters", pathMatch: "full" }
+  //{ path: "", redirectTo: "/characters", pathMatch: "full" }
+  //{ path: "", redirectTo: "/houses", pathMatch: "full" }
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
