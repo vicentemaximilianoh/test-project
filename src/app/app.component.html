@@ -1,13 +1,21 @@
 <header>
-  <h1>{{ title }}</h1>
+  <h1 class="page-title">{{ title }}</h1>
   <nav>
-    <ul>
-      <li>
-        <a [routerLink]="['characters']" routerLinkActive="router-link-active">
-          Characters
-        </a>
-        <a [routerLink]="['houses']" routerLinkActive="router-link-active">
+    <ul class="nav-menu">
+      <li class="nav-menu__item">
+        <a
+          [routerLink]="['houses']"
+          routerLinkActive="nav-menu__item__link--active"
+        >
           Houses
+        </a>
+      </li>
+      <li class="nav-menu__item">
+        <a
+          [routerLink]="['characters']"
+          routerLinkActive="nav-menu__item__link--active"
+        >
+          Characters
         </a>
       </li>
     </ul>

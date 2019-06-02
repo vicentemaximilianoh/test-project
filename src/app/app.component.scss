@@ -1,10 +1,33 @@
-@import '_variables';
+@import "_variables";
 
-html {
-    box-sizing: border-box;
-    font-size: 24px;
+.page-title {
+  color: white;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit
+@mixin hover {
+  //&:hover {
+  //  color: white;
+  //}
+}
+
+.nav-menu {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+
+  &__item {
+    height: 30px;
+    color: white;
+    margin: 10px;
+
+    &__link {
+      &--active {
+        color: gold;
+      }
+    }
+  }
+}
+
+.nav-menu__item__link--active > .nav-menu__item:hover {
+  background: red;
 }
