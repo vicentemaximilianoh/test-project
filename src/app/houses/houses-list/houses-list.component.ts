@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HousesApiService } from "../houses-api.service";
+import { MatTableDataSource } from "@angular/material/table";
 
 @Component({
   selector: "app-houses-list",
@@ -8,7 +9,7 @@ import { HousesApiService } from "../houses-api.service";
 })
 export class HousesListComponent implements OnInit {
   api: HousesApiService;
-  houses: Object[] = [];
+  houses = new MatTableDataSource();
   loading: boolean;
   displayedColumns: string[] = ["name", "words"];
 
@@ -24,8 +25,7 @@ export class HousesListComponent implements OnInit {
     this.loading = true;
     this.api.getAll().subscribe(
       response => {
-        debugger;
-        this.houses = response;
+        this.houses.data = response;
       },
       err => {
         console.log(err);
@@ -34,5 +34,9 @@ export class HousesListComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+
+  applyFilter(val) {
+    this.houses.filter = val.trim().toLowerCase();
   }
 }
