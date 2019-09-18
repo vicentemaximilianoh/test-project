@@ -8,8 +8,9 @@ import { HousesApiService } from "../houses-api.service";
 })
 export class HousesListComponent implements OnInit {
   api: HousesApiService;
-  houses;
+  houses: Object[] = [];
   loading: boolean;
+  displayedColumns: string[] = ["name", "words"];
 
   constructor(api: HousesApiService) {
     this.api = api;
@@ -23,6 +24,7 @@ export class HousesListComponent implements OnInit {
     this.loading = true;
     this.api.getAll().subscribe(
       response => {
+        debugger;
         this.houses = response;
       },
       err => {
